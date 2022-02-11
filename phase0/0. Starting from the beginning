@@ -1,0 +1,10 @@
+
+1. How would I go about modeling this package?
+  - globalValueSets -> UML Object Diagram
+    - sits in the outer most domain, as it is global
+  - layouts -> UI Mock
+  - objects -> UML Object Diagram
+    * ignoring listViews
+  - pathAssistants -> UI Mock
+  - permissionsets -> customized UML Object Diagram
+  - tabs -> UI Mock with profile visibility and custom app availability
