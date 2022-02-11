@@ -8,3 +8,7 @@
   - pathAssistants -> UI Mock
   - permissionsets -> customized UML Object Diagram
   - tabs -> UI Mock with profile visibility and custom app availability
+
+2. When looking from a domain perspective, how might I slice these directories up?
+  - based on just this much information, I can't say.
+  - after diagramming the above, move on to the next package.
