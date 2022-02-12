@@ -1,0 +1,10 @@
+
+1. Research and document notes for BPMN
+  - https://www.lucidchart.com/pages/bpmn-symbols-explained
+  - https://www.youtube.com/watch?v=BwkNceoybvA&ab_channel=Lucidchart
+
+2. Improve styling and design of charts
+  - https://www.youtube.com/watch?v=WIr2JIlqias&list=PLUoebdZqEHTyM1VsFaj-9_7MlJ7bUOVx5&ab_channel=Lucidchart
+
+3. Learn more about LucidChart in general
+  - YouTube / Website / etc.
