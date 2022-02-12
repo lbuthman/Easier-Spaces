@@ -9,6 +9,11 @@
   - permissionsets -> customized UML Object Diagram
   - tabs -> UI Mock with profile visibility and custom app availability
 
+*** On second thought:
+  - I don't think UI diagrams are required. They take up too much time and are too precise/definite.
+  - Building UI in Salesforce is too easy, can be created and demoed quickly.
+  - Instead, use simple shapes with close enough accuracy.
+
 2. When looking from a domain perspective, how might I slice these directories up?
   - based on just this much information, I can't say.
   - after diagramming the above, move on to the next package.
