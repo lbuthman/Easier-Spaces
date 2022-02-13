@@ -1,15 +1,15 @@
-@isTest
+@IsTest
 public class CustomerServicesTest {
-    @isTest
+    @IsTest
     static void canFetchCustomerFields() {
-        customerServices.Customer contact = customerServices.getCustomerFields(
+        CustomerServices.Customer contact = CustomerServices.getCustomerFields(
             'Contact'
         );
-        system.assertNotEquals(contact, null);
-        customerServices.Customer lead = customerServices.getCustomerFields(
+        System.assertNotEquals(contact, null);
+        CustomerServices.Customer lead = CustomerServices.getCustomerFields(
             'Lead'
         );
-        system.assertNotEquals(lead, null);
-        system.assertNotEquals(contact, lead);
+        System.assertNotEquals(lead, null);
+        System.assertNotEquals(contact, lead);
     }
 }

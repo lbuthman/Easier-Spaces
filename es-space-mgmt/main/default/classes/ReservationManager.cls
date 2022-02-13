@@ -1,5 +1,5 @@
 public with sharing class ReservationManager {
-    @InvocableMethod(label='Update Reservation Status')
+    @InvocableMethod(Label='Update Reservation Status')
     public static List<Id> updateReservationStatus(
         List<Requests> recordsToUpdate
     ) {
@@ -9,15 +9,15 @@ public with sharing class ReservationManager {
         List<Id> sucessIds = new List<Id>();
         if (recordsToUpdate.size() > 0) {
             // Safe navigate to avoid null pointers
-            sObjectType = recordsToUpdate[0].recordId?.getSObjectType();
+            sObjectType = recordsToUpdate[0].recordId?.getSobjectType();
             objectName = sObjectType?.getDescribe()?.getName();
             // Query custom Metadata Records to update sObject type
             List<Customer_Fields__mdt> lstcmdts = [
                 SELECT
-                    Customer_Status__r.QualifiedAPIName,
+                    Customer_Status__r.QualifiedApiName,
                     Customer_Reservation_Status_Value__c
                 FROM Customer_Fields__mdt
-                WHERE Sobject_Type__r.QualifiedAPIName = :objectName
+                WHERE Sobject_Type__r.QualifiedApiName = :objectName
                 WITH SECURITY_ENFORCED
                 LIMIT 1
             ];
@@ -27,7 +27,7 @@ public with sharing class ReservationManager {
                     recordsToUpdate[0].recordId
                 );
                 recordToUpdate.put(
-                    cmdt.Customer_Status__r.QualifiedAPIName,
+                    cmdt.Customer_Status__r.QualifiedApiName,
                     cmdt.Customer_Reservation_Status_Value__c
                 );
                 // Check for CRUD and FLS
@@ -40,7 +40,7 @@ public with sharing class ReservationManager {
                 try {
                     update lstToUpdate;
                     sucessIds.add(lstToUpdate[0].Id);
-                } catch (exception e) {
+                } catch (Exception e) {
                     throw new ReservationManagerException(e.getMessage());
                 }
             }

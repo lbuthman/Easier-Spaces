@@ -1,20 +1,20 @@
 public with sharing class ReservationManagerController {
     //Note: This is a sample, so we're using 'LIMIT' to simulate proper set/pagination controls
-    @auraEnabled(cacheable=true)
+    @AuraEnabled(Cacheable=true)
     public static List<CustomerServices.Customer> getCustomerList(
         String sObjectType
     ) {
         List<CustomerServices.Customer> customers = new List<CustomerServices.Customer>();
         Customer_Fields__mdt c = [
             SELECT
-                Customer_Name__r.QualifiedAPIName,
-                Customer_Email__r.QualifiedAPIName,
-                Customer_City__r.QualifiedAPIName,
-                Customer_State__r.QualifiedAPIName,
-                Customer_Status__r.QualifiedAPIName,
+                Customer_Name__r.QualifiedApiName,
+                Customer_Email__r.QualifiedApiName,
+                Customer_City__r.QualifiedApiName,
+                Customer_State__r.QualifiedApiName,
+                Customer_Status__r.QualifiedApiName,
                 Customer_Draft_Status_Values__c
             FROM Customer_Fields__mdt
-            WHERE Sobject_Type__r.QualifiedAPIName = :sObjectType
+            WHERE Sobject_Type__r.QualifiedApiName = :sObjectType
             WITH SECURITY_ENFORCED
             LIMIT 1
         ];
@@ -23,28 +23,28 @@ public with sharing class ReservationManagerController {
         draftStatus = c.Customer_Draft_Status_Values__c?.split(',');
 
         String query = 'SELECT ';
-        query += c.Customer_Name__r.QualifiedAPIName + ', ';
-        query += c.Customer_Email__r.QualifiedAPIName + ', ';
-        query += c.Customer_City__r.QualifiedAPIName + ', ';
-        query += c.Customer_State__r.QualifiedAPIName + ', ';
-        query += c.Customer_Status__r.QualifiedAPIName + ', ';
+        query += c.Customer_Name__r.QualifiedApiName + ', ';
+        query += c.Customer_Email__r.QualifiedApiName + ', ';
+        query += c.Customer_City__r.QualifiedApiName + ', ';
+        query += c.Customer_State__r.QualifiedApiName + ', ';
+        query += c.Customer_Status__r.QualifiedApiName + ', ';
         query += 'Id';
         query += ' FROM ' + sObjectType;
         if (draftStatus.size() > 0) {
             query +=
                 ' WHERE ' +
-                c.Customer_Status__r.QualifiedAPIName +
+                c.Customer_Status__r.QualifiedApiName +
                 ' IN: draftStatus';
         }
         query += ' WITH SECURITY_ENFORCED ORDER BY CreatedDate DESC LIMIT 5';
 
-        for (Sobject sobj : Database.query(query)) {
+        for (SObject sobj : Database.query(query)) {
             CustomerServices.Customer customer = new CustomerServices.Customer(
-                (String) sobj.get(c.Customer_Name__r.QualifiedAPIName),
-                (String) sobj.get(c.Customer_Email__r.QualifiedAPIName),
-                (String) sobj.get(c.Customer_City__r.QualifiedAPIName),
-                (String) sobj.get(c.Customer_State__r.QualifiedAPIName),
-                (String) sobj.get(c.Customer_Status__r.QualifiedAPIName),
+                (String) sobj.get(c.Customer_Name__r.QualifiedApiName),
+                (String) sobj.get(c.Customer_Email__r.QualifiedApiName),
+                (String) sobj.get(c.Customer_City__r.QualifiedApiName),
+                (String) sobj.get(c.Customer_State__r.QualifiedApiName),
+                (String) sobj.get(c.Customer_Status__r.QualifiedApiName),
                 (String) sobj.get('Id')
             );
             customers.add(customer);
@@ -52,7 +52,7 @@ public with sharing class ReservationManagerController {
         return customers;
     }
 
-    @auraEnabled(cacheable=true)
+    @AuraEnabled(Cacheable=true)
     public static List<Reservation__c> getOpenReservations() {
         return [
             SELECT

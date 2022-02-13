@@ -1,23 +1,23 @@
 public inherited sharing class CustomerServices {
-    @auraEnabled(cacheable=true)
+    @AuraEnabled(Cacheable=true)
     public static Customer getCustomerFields(String objectType) {
         Customer customer;
         for (Customer_Fields__mdt c : [
             SELECT
-                Customer_Name__r.QualifiedAPIName,
-                Customer_Email__r.QualifiedAPIName,
-                Customer_City__r.QualifiedAPIName,
-                Customer_State__r.QualifiedAPIName,
-                Customer_Status__r.QualifiedAPIName
+                Customer_Name__r.QualifiedApiName,
+                Customer_Email__r.QualifiedApiName,
+                Customer_City__r.QualifiedApiName,
+                Customer_State__r.QualifiedApiName,
+                Customer_Status__r.QualifiedApiName
             FROM Customer_Fields__mdt
-            WHERE Sobject_Type__r.QualifiedAPIName = :objectType
+            WHERE Sobject_Type__r.QualifiedApiName = :objectType
             WITH SECURITY_ENFORCED
         ]) {
             customer = new Customer(
-                c.Customer_Name__r.QualifiedAPIName,
-                c.Customer_Email__r.QualifiedAPIName,
-                c.Customer_City__r.QualifiedAPIName,
-                c.Customer_State__r.QualifiedAPIName,
+                c.Customer_Name__r.QualifiedApiName,
+                c.Customer_Email__r.QualifiedApiName,
+                c.Customer_City__r.QualifiedApiName,
+                c.Customer_State__r.QualifiedApiName,
                 '',
                 ''
             );
@@ -27,22 +27,22 @@ public inherited sharing class CustomerServices {
 
     public class Customer {
         //attributes that we associate with customers
-        @auraEnabled
+        @AuraEnabled
         public String email { get; set; }
 
-        @auraEnabled
+        @AuraEnabled
         public String name { get; set; }
 
-        @auraEnabled
+        @AuraEnabled
         public String city { get; set; }
 
-        @auraEnabled
+        @AuraEnabled
         public String state { get; set; }
 
-        @auraEnabled
+        @AuraEnabled
         public String status { get; set; }
 
-        @auraEnabled
+        @AuraEnabled
         public String Id { get; set; }
 
         //putting them together, we get our wrapper object:
@@ -55,16 +55,21 @@ public inherited sharing class CustomerServices {
             String custId
         ) {
             this.name = name;
-            if (String.isNotEmpty(email))
+            if (String.isNotEmpty(email)) {
                 this.email = email;
-            if (String.isNotEmpty(city))
+            }
+            if (String.isNotEmpty(city)) {
                 this.city = city;
-            if (String.isNotEmpty(state))
+            }
+            if (String.isNotEmpty(state)) {
                 this.state = state;
-            if (String.isNotEmpty(status))
+            }
+            if (String.isNotEmpty(status)) {
                 this.status = status;
-            if (String.isNotEmpty(custId))
+            }
+            if (String.isNotEmpty(custId)) {
                 this.Id = custId;
+            }
         }
     }
 }

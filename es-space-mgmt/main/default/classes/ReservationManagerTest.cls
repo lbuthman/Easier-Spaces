@@ -1,6 +1,6 @@
-@isTest
+@IsTest
 private class ReservationManagerTest {
-    @testSetup
+    @TestSetup
     static void setup() {
         List<Account> accts = TestDataFactory.makeAccounts(15);
         List<Contact> contacts = TestDataFactory.makeContacts(25);
@@ -12,13 +12,14 @@ private class ReservationManagerTest {
         for (Contact c : contacts) {
             c.AccountId = accts[counter].Id;
             counter++;
-            if (counter >= accts.size())
+            if (counter >= accts.size()) {
                 counter = 0;
+            }
         }
         insert contacts;
     }
 
-    @isTest
+    @IsTest
     static void canUpdateLeadReservationStatus() {
         Lead lead = [SELECT Id FROM Lead LIMIT 1];
         ReservationManager.Requests request = new ReservationManager.Requests();
@@ -28,10 +29,10 @@ private class ReservationManagerTest {
         );
         List<Customer_Fields__mdt> lstcmdts = [
             SELECT
-                Customer_Status__r.QualifiedAPIName,
+                Customer_Status__r.QualifiedApiName,
                 Customer_Reservation_Status_Value__c
             FROM Customer_Fields__mdt
-            WHERE Sobject_Type__r.QualifiedAPIName = 'Lead'
+            WHERE Sobject_Type__r.QualifiedApiName = 'Lead'
             WITH SECURITY_ENFORCED
             LIMIT 1
         ];
@@ -47,7 +48,7 @@ private class ReservationManagerTest {
         );
     }
 
-    @isTest
+    @IsTest
     static void canUpdateContactReservationStatus() {
         Contact contact = [SELECT Id FROM Contact LIMIT 1];
         ReservationManager.Requests request = new ReservationManager.Requests();
@@ -57,10 +58,10 @@ private class ReservationManagerTest {
         );
         List<Customer_Fields__mdt> lstcmdts = [
             SELECT
-                Customer_Status__r.QualifiedAPIName,
+                Customer_Status__r.QualifiedApiName,
                 Customer_Reservation_Status_Value__c
             FROM Customer_Fields__mdt
-            WHERE Sobject_Type__r.QualifiedAPIName = 'Contact'
+            WHERE Sobject_Type__r.QualifiedApiName = 'Contact'
             WITH SECURITY_ENFORCED
             LIMIT 1
         ];

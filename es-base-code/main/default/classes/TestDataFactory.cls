@@ -1,4 +1,4 @@
-@isTest
+@IsTest
 public class TestDataFactory {
     public static List<Account> makeAccounts(Integer acctNum) {
         //make some Accounts

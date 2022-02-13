@@ -1,6 +1,6 @@
-@isTest
+@IsTest
 public class ReservationManagerControllerTest {
-    @testSetup
+    @TestSetup
     static void setup() {
         List<Account> accts = TestDataFactory.makeAccounts(15);
         List<Contact> contacts = TestDataFactory.makeContacts(25);
@@ -15,8 +15,9 @@ public class ReservationManagerControllerTest {
         for (Contact c : contacts) {
             c.AccountId = accts[counter].Id;
             counter++;
-            if (counter >= accts.size())
+            if (counter >= accts.size()) {
                 counter = 0;
+            }
         }
         insert contacts;
 
@@ -45,23 +46,23 @@ public class ReservationManagerControllerTest {
         insert reservs;
     }
 
-    @isTest
+    @IsTest
     static void canFetchCustomers() {
         List<CustomerServices.Customer> contacts = ReservationManagerController.getCustomerList(
             'Contact'
         );
-        system.assertNotEquals(contacts, null);
+        System.assertNotEquals(contacts, null);
         List<CustomerServices.Customer> leads = ReservationManagerController.getCustomerList(
             'Lead'
         );
-        system.assertNotEquals(leads, null);
-        system.assertNotEquals(contacts, leads);
+        System.assertNotEquals(leads, null);
+        System.assertNotEquals(contacts, leads);
     }
 
-    @isTest
+    @IsTest
     static void canFetchOpenReservs() {
         List<Reservation__c> reservs = ReservationManagerController.getOpenReservations();
-        system.assertNotEquals(reservs, null);
-        system.assertEquals(reservs.size(), 10);
+        System.assertNotEquals(reservs, null);
+        System.assertEquals(reservs.size(), 10);
     }
 }

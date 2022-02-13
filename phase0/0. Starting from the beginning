@@ -5,7 +5,11 @@
   - layouts -> UI Mock
   - objects -> UML Object Diagram
     * ignoring listViews
+    # this diagram is weak
+      1. Salesforce can do something similar with Schema
+      2. Fields without context don't mean much, except for design. But again, Schema has this already.
   - pathAssistants -> UI Mock
+    # this will be more interesting once we see how the paths correlate with events/state change
   - permissionsets -> customized UML Object Diagram
   - tabs -> UI Mock with profile visibility and custom app availability
 
