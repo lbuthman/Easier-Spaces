@@ -20,3 +20,13 @@ LWC Template Types
   - The state is how things are at the time of process execution.
   - The intent is the goal from the proceeding processing.
   - The Intent wraps the Process, the State sets the stage.
+
+- A reasonable process for exhuming process maps is:
+  1. Start with Lightning App Builder.
+  2. Record all relevant App Pages.
+  3. For each App Page, enter [To begin understand a process] process
+
+- A reasonable process for creating a domain map is: [work in progress]
+  1. Start with App Manager.
+  2. Record all the Navigation Items and dig.
+  3. Record all the Selected Profiles
