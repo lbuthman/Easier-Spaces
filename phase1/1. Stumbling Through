@@ -11,4 +11,7 @@ LWC Template Types
     - It is composed of value templates and other entities.
     - The highest level Entity Template resides in the UI.
 
-
+- To begin understanding a process,
+  1. Start with the highest level Entity Template.
+  2. Understand its data, methods, and interface.
+  3. Identify the associated files and continue recursively until reaching the end.
