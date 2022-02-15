@@ -28,5 +28,24 @@ LWC Template Types
 
 - A reasonable process for creating a domain map is: [work in progress]
   1. Start with App Manager.
-  2. Record all the Navigation Items and dig.
+  2. Record all the Navigation Items.
+    - This should provide a list of relevant Lightning App Pages.
   3. Record all the Selected Profiles
+
+- In regards to the object model, it should quite simple.
+  - Fields are only relevant to a given process.
+  - If there are key fields, maybe an argument could be made to include a subset.
+  - Relationships should be drawn with 1 of 2 connections.
+    1. Lookup
+    2. Master/Detail
+  - The problems with trying to use Schema Builder for an Object Model:
+    1. The fields make it unnecessarily complex.
+    2. Because of long field lists, you have to zoom out pretty far to see everything.
+    3. You can't save the domain map state, you have to configure it each time.
+  - The good things about Schema Builder:
+    1. The icons indicating that the object is part of an Unlocked Package.
+    2. The detail of the fields can be interesting and helpful, that complexity is desired.
+    3. It is easy to use.
+    4. It is a good reality check, since it is a version of truth.
+  - The good things about a custom Object Map
+    1. You can add extra meaning in the arrangement.

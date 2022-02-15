@@ -2,13 +2,15 @@
 Space Management Lightning App
   - "Create reservations, design spaces."
 1. Navigation Items
-  - Reservation Manager
-  - Spaces Designer
-  - Markets
-  - Spaces
-  - Reservations
-  - Contacts
-  - Leads
+  Application
+    - Reservation Manager [app]
+    - Spaces Designer [app]
+  Object Model
+    - Markets [record]
+    - Spaces [record]
+    - Reservations [record]
+    - Contacts [record]
+    - Leads [record]
 
 2. Selected Profiles
   - all of them, so not helpful
