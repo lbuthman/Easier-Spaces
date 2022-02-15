@@ -1,0 +1,12 @@
+
+1. customerList (lwc)
+  - exposed on the Reservation Manager Lightning App Page
+  - contains the customerTile value template
+  - publishes an event when a record is clicked
+  - refreshes when receiving the Flow_Status_Change__c event
+    - this ensures the list only has Customers that are ready for a Reservation
+  - currently supports Lead/Contact
+  - Related Files:
+    1. ReservationManagerController
+      - returns a list of Customers (Contacts/Leads) that are in 'DraftStatus'
+      - this controller also has responsibilities for reservationList, which isn't great.
