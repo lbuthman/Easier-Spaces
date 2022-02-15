@@ -1,2 +1,14 @@
 
--
+LWC Template Types
+  1. Value Templates
+    - Example: customerTile
+    - This type of template is foundational and doesn't have identity.
+    - They are atomic, independent, and generic.
+    - They represent the expression of a value, whatever that value might be.
+  2. Entity Templates
+    - Example: customerList
+    - This type of template is composed and coordinating.
+    - It is composed of value templates and other entities.
+    - The highest level Entity Template resides in the UI.
+
+
