@@ -1,12 +1,29 @@
+1.Create Reservations for eligible Contacts and Leads
 
-1. customerList (lwc)
-  - exposed on the Reservation Manager Lightning App Page
-  - contains the customerTile value template
-  - publishes an event when a record is clicked
-  - refreshes when receiving the Flow_Status_Change__c event
-    - this ensures the list only has Customers that are ready for a Reservation
-  - currently supports Lead/Contact
-  - Related Files:
-    1. ReservationManagerController
-      - returns a list of Customers (Contacts/Leads) that are in 'DraftStatus'
-      - this controller also has responsibilities for reservationList, which isn't great.
+  A. customerList (lwc)
+    Where can I find it?
+      - exposed on the Reservation Manager Lightning App Page
+    What does it do?
+      - Lists Contacts and Leads eligible for a Reservation
+    How does it do it?
+      todo: create video walk-through
+    Related Files:
+      1. ReservationManagerController
+        - returns a list of Customers (Contacts/Leads) that are in 'DraftStatus'
+        - this controller also has responsibilities for reservationList, which isn't great.
+      2. customerTile
+        - an LWC Value template
+
+  B. reservationHelperAura
+    Where can I find it?
+      - exposed on the Reservation Manager Lightning App Page
+    What does it do?
+      - Create Reservation records based on a Contact or Lead.
+    How does it do it?
+      todo: create video walk-through
+    Related Files:
+      1. reservationHelper (service lwc)
+      2. createReservation (flow)
+        a. reservationHelperForm (lwc)
+        b. flow screen
+        c. ReservationManager.updateReservationStatus() (invokable apex)
