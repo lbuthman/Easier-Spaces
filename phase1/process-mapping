@@ -4,7 +4,7 @@
     Where can I find it?
       - exposed on the Reservation Manager Lightning App Page
     What does it do?
-      - Lists Contacts and Leads eligible for a Reservation
+      - Lists Contacts and Leads eligible for a Reservation and publishes an event when selected.
     How does it do it?
       todo: create video walk-through
     Related Files:
@@ -28,8 +28,28 @@
         b. flow screen
         c. ReservationManager.updateReservationStatus() (invokable apex)
 
-2. [Yet to be named]
+2. Reserve a Space for eligible Reservations
   - Lightning App Page: Spaces Designer
   A. reservationList
+    Where can I find it?
+      - exposed on the Spaces Designer Lightning App Page
+    What does it do?
+      - Lists qualified Reservation records and publishes an event on selection.
+    How does it do it?
+      todo: create video walk-through
+    Related Files:
+      1. ReservationManagerController (apex)
+      2. reservationTile (lwc value)
 
   B. spaceDesignerAura
+    Where can I find it?
+      - exposed on the Spaces Designer Lightning App Page
+    What does it do?
+      - calls a Flow that updates the Reservation with a Space and a new status
+    How does it do it?
+      todo: create video walk-through
+    Related Files:
+      1. spaceDesigner (flow)
+        - spaceDesignForm (lwc screen entity)
+          - MarketServices (apex)
+      2. spaceDesigner (lwc service)
