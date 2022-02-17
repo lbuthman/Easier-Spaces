@@ -1,5 +1,6 @@
 import { LightningElement, wire } from 'lwc';
 import { refreshApex } from '@salesforce/apex';
+//todo - move to new controller once package has been created and installed in org
 import getOpenReservations from '@salesforce/apex/reservationManagerController.getOpenReservations';
 
 import TILE_SELECTION_MC from '@salesforce/messageChannel/Tile_Selection__c';
