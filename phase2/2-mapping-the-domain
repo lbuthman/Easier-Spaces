@@ -1,0 +1,5 @@
+
+- One thing I noticed is the Customer data structure is inside CustomerServices inside es-base-code.
+  - I think there will be a more logical place for it in the update packaging structure.
+
+
