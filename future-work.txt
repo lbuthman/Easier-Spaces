@@ -10,3 +10,7 @@
   - YouTube / Website / etc.
 
 4. Refactor ReservationManagerController to be specific for customerList and reservationList
+
+Bonus Round
+  - Current implementation doesn't validate minimum or maximum size.
+  - Once an item is selected and the flow is launched, there is no way to back out.
