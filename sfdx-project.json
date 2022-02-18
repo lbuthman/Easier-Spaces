@@ -1,11 +1,11 @@
 {
     "packageDirectories": [
         {
-            "path": "./es-base-objects",
-            "package": "ESObjects",
-            "versionName": "Base Objects - Winter '22",
-            "versionNumber": "53.0.0.NEXT",
-            "default": false
+            "path": "./easier-spaces",
+            "package": "Easier Spaces",
+            "versionName": "Easier Spaces 1.0",
+            "versionNumber": "1.0.0.NEXT",
+            "default": true
         },
         {
             "path": "./es-base-styles",
@@ -13,49 +13,14 @@
             "versionName": "Base Styles LWC - Winter '22",
             "versionNumber": "53.0.0.NEXT",
             "default": false
-        },
-        {
-            "path": "./es-base-code",
-            "package": "ESBaseCodeLWC",
-            "versionName": "Base Code LWC - Winter '22",
-            "versionNumber": "53.0.0.NEXT",
-            "default": false,
-            "dependencies": [
-                {
-                    "package": "ESObjects",
-                    "versionNumber": "53.0.0.LATEST"
-                }
-            ]
-        },
-        {
-            "path": "./es-space-mgmt",
-            "package": "ESSpaceMgmtLWC",
-            "versionName": "Space Management App - Winter '22",
-            "versionNumber": "53.0.0.NEXT",
-            "default": true,
-            "dependencies": [
-                {
-                    "package": "ESObjects",
-                    "versionNumber": "53.0.0.LATEST"
-                },
-                {
-                    "package": "ESBaseCodeLWC",
-                    "versionNumber": "53.0.0.LATEST"
-                },
-                {
-                    "package": "ESBaseStylesLWC",
-                    "versionNumber": "53.0.0.LATEST"
-                }
-            ]
         }
     ],
     "namespace": "",
     "sfdcLoginUrl": "https://login.salesforce.com",
     "sourceApiVersion": "53.0",
     "packageAliases": {
-        "ESObjects": "0Ho4W000000CaeJSAS",
-        "ESBaseCodeLWC": "0Ho4W000000CaeTSAS",
         "ESBaseStylesLWC": "0Ho4W000000CaeOSAS",
-        "ESSpaceMgmtLWC": "0Ho4W000000CaeYSAS"
+        "Easier Spaces": "0Ho8c000000fxj5CAA",
+        "Easier Spaces@latest": "04t8c000000y0U6AAI"
     }
 }
